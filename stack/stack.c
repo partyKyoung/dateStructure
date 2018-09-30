@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "stack.h"
 
 Stack* createStack(int maxSize) {
@@ -14,10 +15,13 @@ Stack* createStack(int maxSize) {
 
   memset(newStack, 0, sizeof(Stack));
 
+  newStack->currentSize = 0;
+  newStack->maxSize = maxSize;
+
   return newStack;
 };
 
-int pushStack(char str, Stack* stack) {
+int pushStack(char* str, Stack* stack) {
   if (stack->currentSize == stack->maxSize) {
     printf("\n스택이 가득 차서 push를 할 수 없습니다.\n");
 
@@ -31,33 +35,31 @@ int pushStack(char str, Stack* stack) {
     return -1;
   }
 
+  newElement->str = str;
   newElement->prevNode = stack->topNode;
+  
   stack->topNode = newElement;
   stack->currentSize +=1;
 
   return stack->currentSize;
 };
 
-char popStack(Stack* stack) {
+char* popStack(Stack* stack) {
   Element* removeElement = stack->topNode;
+  char* str = "Error";
 
   if (stack->currentSize == 0 ) {
     printf("\n비어있는 스택입니다.\n");
 
-    return '\n';
+    return str;
   }
 
   stack->topNode = removeElement->prevNode;
-
-  char str[1] = removeElement->str;
+  stack->currentSize -= 1;
+  
+  str = removeElement->str;
 
   free(removeElement);
 
   return str;
 };
-
-char popStack(Stack* stack) {
-  Element* element = stack->topNode;
-
-  return element->str;
-}

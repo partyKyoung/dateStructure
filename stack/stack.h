@@ -2,7 +2,7 @@
 #define _STACK_
 
 typedef struct ElementType {
-  char str[10];
+  char* str;
   struct ElementType* prevNode;
 } Element;
 
@@ -13,7 +13,6 @@ typedef struct StackType {
 } Stack;
 
 Stack* createStack(int maxSize);
-int pushStack(char str, Stack* stack);
-char popStack(Stack* stack);
-char popStack(Stack* stack);
+int pushStack(char* str, Stack* stack);
+char* popStack(Stack* stack);
 #endif
