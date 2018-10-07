@@ -15,4 +15,5 @@ typedef struct StackType {
 Stack* createStack(int maxSize);
 int pushStack(char* str, Stack* stack);
 char* popStack(Stack* stack);
+
 #endif
