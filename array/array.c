@@ -3,30 +3,24 @@
 #include "array.h"
 #define arraySize 5
 
-int *createArray(int n) {
-  int *arr = malloc(n * sizeof(int));
+/*
+#include<stdio.h>
+void main() {
+   char *weekdays[] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+   printf("length=%d", sizeof(weekdays)/sizeof(weekdays[0]));
+   // length=7
+}
+*/
 
-  for (int i = 0; i < n; i++) {
-    arr[i] = 0;
-  }
-
-  return arr;
+int* createArray(int n) {
+  int *array;
+    array = malloc(n * sizeof(*array));
 }
 
 int retrieve(int *arr, int i) {
-  if (i < 0 || i >= arraySize) {
-    return -1;
-  }
 
-  return arr[i];
 }
 
 void store(int *arr, int i, int e) {
-  if (i < 0 || i >= arraySize) {
-    printf("error\n");
 
-    return;
-  }
-
-  arr[i] = e;
 }
