@@ -54,4 +54,24 @@ int addQueue(char* str, Queue* queue) {
   return queue->currentSize;
 };
 
-char* deleteQueue(Queue* queue);
+char* deleteQueue(Queue* queue) {
+  char* str = "Error";
+
+  if (queue->currentSize == 0 ) {
+    printf("비어있는 큐입니다.\n");
+
+    return str;
+  }
+
+  Element* removeElement = queue->frontElement;
+
+  queue->frontElement = removeElement->nextNode;
+  queue->currentSize -= 1;
+
+  
+  str = removeElement->str;
+
+  free(removeElement);
+
+  return str;
+};
