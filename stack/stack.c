@@ -3,10 +3,6 @@
 #include <string.h>
 #include "stack.h"
 
-/**
- * 원하는 크기를 가진 스택을 생성해준다. 
- * @param {int} maxSize 스택의 최대 크기
- */
 Stack *createStack(int maxSize){
   Stack *newStack = NULL;
 
@@ -25,11 +21,6 @@ Stack *createStack(int maxSize){
   return newStack;
 };
 
-/**
- * 스택에 원하는 값을 push 하는 함수
- * @param {char} str 스택에 넣을 값
- * @param {Stack} stack 값을 넣을 스택
- */
 int pushStack(char *str, Stack *stack)
 {
   // 스택이 가득 차면 현재 스택 사이즈를 리턴하며 함수 종료.
@@ -55,10 +46,6 @@ int pushStack(char *str, Stack *stack)
   return stack->currentSize;
 };
 
-/**
- * 스택에 원하는 값을 pop 하는 함수
- * @param {Stack} stack 값을 제거할 스택
- */
 char *popStack(Stack *stack){
   Element *removeElement = stack->topNode;
   char *str = "Error";

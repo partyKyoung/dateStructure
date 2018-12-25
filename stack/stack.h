@@ -14,19 +14,19 @@ typedef struct StackType {
   int currentSize; // 스택의 현재 크기
 } Stack;
 
-/* 
-  스택 생성 함수 - 스택의 크기가 maxsize인 빈 스택을 생성하고 반환한다.
-*/
+/**
+ * 원하는 크기를 가진 스택을 생성해준다. 
+ * @param {int} maxSize 스택의 최대 크기
+ */
 Stack* createStack(int maxSize);
 
-/* 
-  스택 push 함수 - 스택의 가장 위에 item을 삽입하고 현재 스택의 크기를 반환한다.
-*/
+
 int pushStack(char* str, Stack* stack);
 
-/* 
-  스택 pop 함수 - 스택의 가장 위의 item을 제거 하면서 제거 당하는 item의 데이터 값을 반환해준다.
-*/
+/**
+ * 스택에 원하는 값을 pop 하는 함수
+ * @param {Stack} stack 값을 제거할 스택
+ */
 char* popStack(Stack* stack);
 
 
