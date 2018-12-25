@@ -17,6 +17,10 @@ int main(int argc, char const *argv[]) {
   str = "C";
   pushStack(str, stack);
 
+  findStack(5, stack);
+  findStack(6, stack);
+  
+
   char* str2;
 
   str2 =  popStack(stack);
