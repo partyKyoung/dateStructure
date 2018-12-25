@@ -31,3 +31,5 @@ char* popStack(Stack* stack);
 
 
 char* findStack(int index, Stack* stack);
+
+#endif

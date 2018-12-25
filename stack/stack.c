@@ -48,7 +48,7 @@ int pushStack(char *str, Stack *stack)
 
 char *popStack(Stack *stack){
   Element *removeElement = stack->topNode;
-  char *str = "Error";
+  char *str;
 
   if (stack->currentSize == 0)
   {
@@ -71,16 +71,19 @@ char *popStack(Stack *stack){
  * 스택에서 원하는 값을 찾는 함수
  */
 char *findStack(int index, Stack *stack){
+  char *str;
   Element *findElement = stack->topNode;
-  if (index >= stack.maxSize){
-    printf("스택의 사이즈보다 큰 값입니다.");
+  if (index >= stack->maxSize){
+    printf("스택의 사이즈보다 큰 값입니다.\n");
 
-    return '';
+    return str;
   }
 
   for (int i = 0; i <= index; i++) {
     findElement = findElement->prevNode;
   }
 
-  return findElement;
+  str = findElement->str;
+
+  return str;
 };

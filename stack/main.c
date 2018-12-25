@@ -1,7 +1,9 @@
+
+#define arraySize 5
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
-#define arraySize 5
 
 int main(int argc, char const *argv[]) {
   Stack* stack = NULL;
@@ -17,13 +19,16 @@ int main(int argc, char const *argv[]) {
   str = "C";
   pushStack(str, stack);
 
-  findStack(5, stack);
-  findStack(6, stack);
-  
-
   char* str2;
 
-  str2 =  popStack(stack);
+  str2 = findStack(1, stack);
 
-  printf("pop - %s\n", str2);
+  printf("find - %s\n", str2);
+  
+
+  char* str3;
+
+  str3 =  popStack(stack);
+
+  printf("pop - %s\n", str3);
 }
