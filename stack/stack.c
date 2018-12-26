@@ -47,43 +47,33 @@ int pushStack(char *str, Stack *stack)
 };
 
 char *popStack(Stack *stack){
-  Element *removeElement = stack->topNode;
-  char *str;
+  Element *removeElement = NULL;
 
-  if (stack->currentSize == 0)
-  {
+  if (stack->currentSize == 0){
     printf("\n비어있는 스택입니다.\n");
 
     return str;
   }
 
+  removeElement = stack->topNode;
+
   stack->topNode = removeElement->prevNode;
   stack->currentSize -= 1;
 
-  str = removeElement->str;
+  removeElement->prevNode = NULL;
 
-  free(removeElement);
-
-  return str;
+  return removeElement;
 };
 
 /**
- * 스택에서 원하는 값을 찾는 함수
+ * top 확인하는 함수
  */
-char *findStack(int index, Stack *stack){
-  char *str;
-  Element *findElement = stack->topNode;
-  if (index >= stack->maxSize){
-    printf("스택의 사이즈보다 큰 값입니다.\n");
+Element* peekStack(Stack* stack){
+  Element *topNode = NULL;
 
-    return str;
+  if(stack->topNode !== NULL) {
+    topNode = stack->topNode;
   }
 
-  for (int i = 0; i <= index; i++) {
-    findElement = findElement->prevNode;
-  }
-
-  str = findElement->str;
-
-  return str;
+  return topNode;
 };

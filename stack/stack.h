@@ -30,6 +30,6 @@ int pushStack(char* str, Stack* stack);
 char* popStack(Stack* stack);
 
 
-char* findStack(int index, Stack* stack);
+Element* peekStack(Stack* stack);
 
 #endif
